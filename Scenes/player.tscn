@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bcut5vgfeh7a5"]
 
-[ext_resource type="Texture2D" uid="uid://bc3arw67tfo3t" path="res://Sprites/spritesheet (3).png" id="1_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://bc3arw67tfo3t" path="res://assets/Sprites/spritesheet (3).png" id="1_6t5aa"]
 [ext_resource type="Script" uid="uid://yif861vbixbg" path="res://scripts/player.gd" id="1_vgqql"]
-[ext_resource type="Texture2D" uid="uid://cfaefhtmq8fsa" path="res://Sprites/spritesheet 67.png" id="2_vgqql"]
-[ext_resource type="Texture2D" uid="uid://bijg088goqelm" path="res://Sprites/spritesheet (2).png" id="3_fkybt"]
-[ext_resource type="AudioStream" uid="uid://dvw8kwtabycw4" path="res://sounds/freesound_community-cartoon-jump-6462.mp3" id="5_fkybt"]
+[ext_resource type="Texture2D" uid="uid://cfaefhtmq8fsa" path="res://assets/Sprites/spritesheet 67.png" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://bijg088goqelm" path="res://assets/Sprites/spritesheet (2).png" id="3_fkybt"]
+[ext_resource type="AudioStream" uid="uid://wd4epqs6kjaj" path="res://assets/sounds/soumages-jumpscare-335598.mp3" id="5_fkybt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("1_6t5aa")
@@ -259,12 +259,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxsqa"]
-size = Vector2(124, 69)
+size = Vector2(70, 69)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1763819368]
 script = ExtResource("1_vgqql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1244413510]
+texture_filter = 1
 position = Vector2(9, 36)
 scale = Vector2(0.43220338, 0.43220338)
 sprite_frames = SubResource("SpriteFrames_gja36")
@@ -273,7 +274,7 @@ autoplay = "idle"
 frame_progress = 0.21040496
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852867671]
-position = Vector2(3, 19)
+position = Vector2(-16, 19)
 shape = SubResource("RectangleShape2D_gxsqa")
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1528349931]
