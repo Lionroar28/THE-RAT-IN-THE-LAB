@@ -259,9 +259,9 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxsqa"]
-size = Vector2(70, 69)
+size = Vector2(120, 66)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1763819368]
+[node name="player" type="CharacterBody2D" unique_id=1763819368]
 script = ExtResource("1_vgqql")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1244413510]
@@ -274,7 +274,7 @@ autoplay = "idle"
 frame_progress = 0.21040496
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1852867671]
-position = Vector2(-16, 19)
+position = Vector2(8, 17)
 shape = SubResource("RectangleShape2D_gxsqa")
 
 [node name="jumpsound" type="AudioStreamPlayer2D" parent="." unique_id=1528349931]

@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://mxkodkbdvcdb" path="res://assets/lab_tileset/pngs/orange_blue/left_tile.png" id="8_oovug"]
 [ext_resource type="Texture2D" uid="uid://buq1pqvvrlvvk" path="res://assets/lab_tileset/pngs/orange_blue/color.png" id="12_oovug"]
 [ext_resource type="PackedScene" uid="uid://bcut5vgfeh7a5" path="res://Scenes/player.tscn" id="13_6r07y"]
+[ext_resource type="PackedScene" uid="uid://ckmy67u7fbgsb" path="res://Scenes/floating_eye.tscn" id="15_oovug"]
+[ext_resource type="PackedScene" uid="uid://dubpkgrw6gi3y" path="res://Scenes/pumpkin.tscn" id="16_8i23i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8i23i"]
 texture = ExtResource("1_xrdnt")
@@ -117,5 +119,28 @@ scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAAAAAABAAAAAAAAAAAAAEACAAAAAAAAAAAAAIACAAAAAAAAAAAAAMACAAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQAAAAAAAAAKAAAAAQAAAAAAAAALAAAAAQAAAAAAAAAMAAAAAQAAAAAAAAANAAAAAQAAAAAAAAAOAAAAAQAAAAAAAAAPAAAAAQAAAAAAAAAQAAAAAQAAAAAAAAAAAAQACAAAAAAAAAAAAAUACAAAAAAAAAAAAAYACAAAAAAAAAAAAAcACAAAAAAAAAAAAAgACAAAAAAAAAARAAAAAQAAAAAAAAAAAAkAAgAAAAAAAAASAAAAAQAAAAAAAAATAAAABQAAAAAAAAATAAkAAwAAAAAAAAATAAgABwAAAAAAAAATAAcABwAAAAAAAAATAAYABwAAAAAAAAATAAEABwAAAAAAAAATAAIABwAAAAAAAAABAAkABgAAAAAAAAACAAkABgAAAAAAAAADAAkABgAAAAAAAAAEAAkABgAAAAAAAAAFAAkABgAAAAAAAAAGAAkABgAAAAAAAAAHAAkABgAAAAAAAAAIAAkABgAAAAAAAAAJAAkABgAAAAAAAAAKAAkABgAAAAAAAAALAAkABgAAAAAAAAAMAAkABgAAAAAAAAANAAkABgAAAAAAAAAOAAkABgAAAAAAAAAPAAkABgAAAAAAAAAQAAkABgAAAAAAAAARAAkABgAAAAAAAAASAAkABgAAAAAAAAABAAgACQAAAAAAAAACAAgACQAAAAAAAAABAAcAAQAAAAAAAAACAAcAAQAAAAAAAAAFAAcACwAAAAAAAAAGAAcADAAAAAAAAAAIAAUACwAAAAAAAAAJAAUADAAAAAAAAAAEAAMACwAAAAAAAAAFAAMACgAAAAAAAAAGAAMADAAAAAAAAAAKAAMACwAAAAAAAAAOAAMADAAAAAAAAAALAAMACgAAAAAAAAAMAAMACgAAAAAAAAANAAMACgAAAAAAAAAQAAgACQAAAAAAAAAQAAcACQAAAAAAAAAQAAYACQAAAAAAAAARAAYACQAAAAAAAAARAAcACQAAAAAAAAARAAgACQAAAAAAAAASAAYACQAAAAAAAAASAAcACQAAAAAAAAASAAgACQAAAAAAAAAQAAUAAQAAAAAAAAARAAUAAQAAAAAAAAASAAUAAQAAAAAAAAATAAUABQAAAAAAAAABAAMADAAAAAAAAAA=")
 tile_set = SubResource("TileSet_6iw57")
 
-[node name="CharacterBody2D" parent="." unique_id=1763819368 instance=ExtResource("13_6r07y")]
+[node name="player" parent="." unique_id=1763819368 instance=ExtResource("13_6r07y")]
 position = Vector2(126, 392)
+
+[node name="enemies" type="Node2D" parent="." unique_id=1201277704]
+
+[node name="floating eye" parent="enemies" unique_id=1663265921 instance=ExtResource("15_oovug")]
+position = Vector2(517, 534)
+scale = Vector2(2.8, 2.8)
+
+[node name="floating eye2" parent="enemies" unique_id=42374606 instance=ExtResource("15_oovug")]
+position = Vector2(924.99994, 522.99994)
+
+[node name="pumpkins" type="Node2D" parent="." unique_id=545761383]
+
+[node name="pumpkin" parent="pumpkins" unique_id=158996940 instance=ExtResource("16_8i23i")]
+position = Vector2(96, 118.00001)
+
+[node name="pumpkin2" parent="pumpkins" unique_id=1580217097 instance=ExtResource("16_8i23i")]
+position = Vector2(1129, 160)
+
+[node name="pumpkin3" parent="pumpkins" unique_id=1187136722 instance=ExtResource("16_8i23i")]
+position = Vector2(855.99994, 499.99997)
+
+[node name="pumpkin4" parent="pumpkins" unique_id=2058151839 instance=ExtResource("16_8i23i")]
+position = Vector2(407, 506.99997)

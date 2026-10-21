@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dubpkgrw6gi3y"]
+
+[ext_resource type="Texture2D" uid="uid://ci68ycwddcfl8" path="res://assets/pixel_pumpkins.png" id="1_4thn5"]
+[ext_resource type="Script" uid="uid://c515d3rl3tko6" path="res://scripts/pumpkin.gd" id="1_syw7a"]
+[ext_resource type="Texture2D" uid="uid://bfytvxy41641x" path="res://assets/Collected.png" id="2_twh7v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgifl"]
+atlas = ExtResource("2_twh7v")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws2ld"]
+atlas = ExtResource("2_twh7v")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itmsq"]
+atlas = ExtResource("2_twh7v")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dw5pv"]
+atlas = ExtResource("2_twh7v")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psb4m"]
+atlas = ExtResource("2_twh7v")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q51sf"]
+atlas = ExtResource("2_twh7v")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjg1r"]
+atlas = ExtResource("1_4thn5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syw7a"]
+atlas = ExtResource("1_4thn5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gxsqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgifl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws2ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itmsq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dw5pv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psb4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q51sf")
+}],
+"loop": 1,
+"name": &"collected",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjg1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syw7a")
+}],
+"loop": 1,
+"name": &"pumpkin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxsqa"]
+radius = 5.3437347
+
+[node name="pumpkin" type="Area2D" unique_id=158996940]
+position = Vector2(230, 115)
+scale = Vector2(5, 5)
+script = ExtResource("1_syw7a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=224874437]
+texture_filter = 1
+position = Vector2(0, 2)
+sprite_frames = SubResource("SpriteFrames_gxsqa")
+animation = &"pumpkin"
+autoplay = "pumpkin"
+frame_progress = 0.94308335
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1202294157]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_gxsqa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
